@@ -1,0 +1,30 @@
+Bateria 18650
+  +----------------+
+  |                |
+  +---(+)--------->+ VCC ESP32-CAM
+  |                |
+  |                +-------> Kolektor tranzystora NPN
+  |                |
+  |                +-(B+)->
+  |                | TP4056
+  |                +-(B-)->
+  |                |
+  +---(-)---------> GND ESP32-CAM
+                   |
+                   +-------> Emiter tranzystora NPN
+                   |
+                   +-------> GND czujnika LD2410C
+                   |
+                   +-------> GND ESP32-CAM
+                   |
+                   |
+VCC czujnika LD2410C --> VCC
+Wyjście sygnału czujnika LD2410C --> GPIO 13 (MOTION_PIN) ESP32-CAM
+
+ESP32-CAM:
+  GPIO 12 (PWR_PIN) --> Baza tranzystora NPN przez rezystor (1kΩ)
+  GPIO 13 (MOTION_PIN) --> Wyjście sygnału czujnika LD2410C
+  GPIO 14 (CS) --> CS SD Card
+  GPIO 15 (SCK) --> SCK SD Card
+  GPIO 2 (MOSI) --> MOSI SD Card
+  GPIO 4 (MISO) --> MISO SD Card
